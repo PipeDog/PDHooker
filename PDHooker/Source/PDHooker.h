@@ -59,6 +59,9 @@ class_exchangeClassMethod(Class cls, SEL originalSEL, SEL replaceSEL);
     object_exchangeInstanceMethod(female, @selector(say:), @selector(pd_say:));
 
     [male say]; // Person say something in new method...
+    [female say]; // Person say something...
+ 
+    [male eat:@"bread"] // Person eat bread.
     [female eat:@"bread"] // Person eat bread in new method.
  }
  
