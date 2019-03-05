@@ -10,6 +10,10 @@
 
 @implementation Person
 
+- (void)dealloc {
+    NSLog(@"dealloc %@", self);
+}
+
 - (void)say {
     NSLog(@"---- object = %@, say", self);
 }
