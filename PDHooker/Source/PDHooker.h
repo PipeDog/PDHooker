@@ -15,6 +15,56 @@ FOUNDATION_EXPORT void
 class_exchangeClassMethod(Class cls, SEL originalSEL, SEL replaceSEL);
 
 
+/*
+ 
+ @implementation Person
+ 
+ - (void)say {
+    NSLog(@"Person say something...");
+ }
+ 
+ - (void)eat:(NSString *)food {
+    NSLog(@"Person eat %@.", food);
+ }
+ 
+ @end
+ 
+ @implementation Person (Hook)
+ 
+ - (void)pd_say {
+    object_registeredObjcActionInvoke(self, @selector(pd_say), ^{
+        [self pd_say];
+    }, ^{
+        NSLog(@"Person say something in new method...");
+    });
+ }
+ 
+ - (void)pd_eat:(NSString *)food {
+    object_registeredObjcActionInvoke(self, @selector(pd_eat:), ^{
+        [self pd_eat:food];
+    }, ^{
+        NSLog(@"Person eat %@ in new method.", food);
+    });
+ }
+
+ @end
+ 
+ @implementation ViewController
+ 
+ - (void)hookMethods {
+    Person *male = [[Person alloc] init];
+    Person *female = [[Person alloc] init];
+
+    object_exchangeInstanceMethod(male, @selector(say), @selector(pd_say));
+    object_exchangeInstanceMethod(female, @selector(say:), @selector(pd_say:));
+
+    [male say]; // Person say something in new method...
+    [female eat:@"bread"] // Person eat bread in new method.
+ }
+ 
+ @end
+ */
+
 // Exchange method, only param `objc` is affected, does not affect other objects.
 FOUNDATION_EXPORT void
 object_exchangeInstanceMethod(id objc, SEL originalSEL, SEL replaceSEL);
