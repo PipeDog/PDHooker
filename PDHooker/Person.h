@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)say;
 
-- (void)say:(NSString *)str;
+- (void)eat:(NSString *)food;
 
 @end
 

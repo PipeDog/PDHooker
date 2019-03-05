@@ -54,15 +54,18 @@ class_exchangeClassMethod(Class cls, SEL originalSEL, SEL replaceSEL);
  - (void)hookMethods {
     Person *male = [[Person alloc] init];
     Person *female = [[Person alloc] init];
+    Person *shemale = [[Person alloc] init];
 
     object_exchangeInstanceMethod(male, @selector(say), @selector(pd_say));
-    object_exchangeInstanceMethod(female, @selector(say:), @selector(pd_say:));
+    object_exchangeInstanceMethod(female, @selector(eat:), @selector(pd_eat:));
 
     [male say]; // Person say something in new method...
     [female say]; // Person say something...
- 
-    [male eat:@"bread"] // Person eat bread.
-    [female eat:@"bread"] // Person eat bread in new method.
+    [shemale say]; // Person say something...
+
+    [male eat:@"bread"]; // Person eat bread.
+    [female eat:@"bread"]; // Person eat bread in new method.
+    [shemale eat:@"bread"]; // Person eat bread.
  }
  
  @end

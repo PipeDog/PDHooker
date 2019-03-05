@@ -15,11 +15,11 @@
 }
 
 - (void)say {
-    NSLog(@"---- object = %@, say", self);
+    NSLog(@"Person say something...");
 }
 
-- (void)say:(NSString *)str {
-    NSLog(@"object = %@, say %@", self, str);
+- (void)eat:(NSString *)food {
+    NSLog(@"Person eat %@.", food);
 }
 
 @end
