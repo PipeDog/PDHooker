@@ -69,7 +69,8 @@ static BOOL _object_objcHasRegistered(id objc, SEL sel) {
 
 void object_exchangeInstanceMethod(id objc, SEL originalSEL, SEL replaceSEL) {
     if (class_isMetaClass(object_getClass(objc))) {
-        return; // Do not support class objects.
+        NSCAssert(NO, @"Do not support class objects.");
+        return;
     }
     
     NSMapTable<id<NSObject>, NSHashTable<NSString *> *> *objectMap = [__registeredMap() objectForKey:[objc class]];
