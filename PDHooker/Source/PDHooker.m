@@ -58,7 +58,7 @@ static NSMapTable<Class, NSMapTable<id<NSObject>, NSHashTable<NSString *> *> *> 
     return __registeredMap;
 }
 
-static BOOL object_objcHasRegistered(id objc, SEL sel) {
+static BOOL _object_objcHasRegistered(id objc, SEL sel) {
     // Get registered objectMap for [objc class].
     NSMapTable<id<NSObject>, NSHashTable<NSString *> *> *objectMap = [__registeredMap() objectForKey:[objc class]];
     // Get methodList for objc.
@@ -68,6 +68,9 @@ static BOOL object_objcHasRegistered(id objc, SEL sel) {
 }
 
 void object_exchangeInstanceMethod(id objc, SEL originalSEL, SEL replaceSEL) {
+    if (class_isMetaClass(object_getClass(objc))) {
+        return; // Do not support class objects.
+    }
     
     NSMapTable<id<NSObject>, NSHashTable<NSString *> *> *objectMap = [__registeredMap() objectForKey:[objc class]];
     if (!objectMap) {
@@ -96,7 +99,7 @@ void object_exchangeInstanceMethod(id objc, SEL originalSEL, SEL replaceSEL) {
 }
 
 void object_registeredObjcActionInvoke(id objc, SEL sel, dispatch_block_t originalSELBlock, dispatch_block_t replaceSELBlock) {
-    BOOL hasRegistered = object_objcHasRegistered(objc, sel);
+    BOOL hasRegistered = _object_objcHasRegistered(objc, sel);
     
     if (hasRegistered) {
         !replaceSELBlock ?: replaceSELBlock();
