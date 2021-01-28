@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DDB5CE7525B7084F00191FCB /* PDHKTool.m in Sources */ = {isa = PBXBuildFile; fileRef = DDB5CE7425B7084F00191FCB /* PDHKTool.m */; };
 		EC9B2760222E880700B9FAB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9B275F222E880700B9FAB3 /* AppDelegate.m */; };
 		EC9B2763222E880700B9FAB3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9B2762222E880700B9FAB3 /* ViewController.m */; };
 		EC9B2766222E880700B9FAB3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC9B2764222E880700B9FAB3 /* Main.storyboard */; };
@@ -15,7 +16,6 @@
 		EC9B276E222E880A00B9FAB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9B276D222E880A00B9FAB3 /* main.m */; };
 		EC9B2778222E880A00B9FAB3 /* PDHookerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9B2777222E880A00B9FAB3 /* PDHookerTests.m */; };
 		EC9B2783222E880A00B9FAB3 /* PDHookerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9B2782222E880A00B9FAB3 /* PDHookerUITests.m */; };
-		EC9B2793222E8E0500B9FAB3 /* PDHooker.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9B2792222E8E0500B9FAB3 /* PDHooker.m */; };
 		EC9B2796222E8E3400B9FAB3 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = EC9B2795222E8E3400B9FAB3 /* Person.m */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DDB5CE7325B7084F00191FCB /* PDHKTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDHKTool.h; sourceTree = "<group>"; };
+		DDB5CE7425B7084F00191FCB /* PDHKTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDHKTool.m; sourceTree = "<group>"; };
 		EC9B275B222E880700B9FAB3 /* PDHooker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PDHooker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9B275E222E880700B9FAB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EC9B275F222E880700B9FAB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,8 +55,6 @@
 		EC9B277E222E880A00B9FAB3 /* PDHookerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDHookerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC9B2782222E880A00B9FAB3 /* PDHookerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDHookerUITests.m; sourceTree = "<group>"; };
 		EC9B2784222E880A00B9FAB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC9B2791222E8E0500B9FAB3 /* PDHooker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PDHooker.h; sourceTree = "<group>"; };
-		EC9B2792222E8E0500B9FAB3 /* PDHooker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PDHooker.m; sourceTree = "<group>"; };
 		EC9B2794222E8E3400B9FAB3 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		EC9B2795222E8E3400B9FAB3 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,8 +144,8 @@
 		EC9B2790222E884500B9FAB3 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				EC9B2791222E8E0500B9FAB3 /* PDHooker.h */,
-				EC9B2792222E8E0500B9FAB3 /* PDHooker.m */,
+				DDB5CE7325B7084F00191FCB /* PDHKTool.h */,
+				DDB5CE7425B7084F00191FCB /* PDHKTool.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -281,10 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC9B2763222E880700B9FAB3 /* ViewController.m in Sources */,
-				EC9B2793222E8E0500B9FAB3 /* PDHooker.m in Sources */,
 				EC9B2796222E8E3400B9FAB3 /* Person.m in Sources */,
 				EC9B276E222E880A00B9FAB3 /* main.m in Sources */,
 				EC9B2760222E880700B9FAB3 /* AppDelegate.m in Sources */,
+				DDB5CE7525B7084F00191FCB /* PDHKTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
